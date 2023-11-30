@@ -18,7 +18,7 @@ pygame.display.set_caption('Flappy Space')
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 timer = pygame.time.Clock()
 font = pygame.font.Font('freesansbold.ttf',20)
-font1 = pygame.font.Font("C:\\Users\\Vinutha TJ\\OneDrive\\Desktop\\GameOff2023\\pixelmix.ttf", 45)
+font1 = pygame.font.Font("pixelmix.ttf", 45)
 
 
 x,y = 0,0
@@ -33,15 +33,15 @@ x, y = 0, 0
 # Create the screen with double buffering
 screen = pygame.display.set_mode((screen_width, screen_height), pygame.DOUBLEBUF)
 
-start_img = pygame.image.load("C:\\Users\\Vinutha TJ\\OneDrive\\Desktop\\GameOff2023\\start_img.png").convert_alpha()
-exit_img = pygame.image.load("C:\\Users\\Vinutha TJ\\OneDrive\\Desktop\\GameOff2023\\exit_img.png").convert_alpha()
+start_img = pygame.image.load("start_img.png").convert_alpha()
+exit_img = pygame.image.load("exit_img.png").convert_alpha()
 
 
 start_button = button.Button(335, 150, start_img, 0.8)
 exit_button = button.Button(350, 280, exit_img, 0.8)
 
-splash_image = pygame.image.load("C:\\Users\\Vinutha TJ\\OneDrive\\Desktop\\GameOff2023\\cityskyline.png")
-second_screen_image = pygame.image.load("C:\\Users\\Vinutha TJ\\OneDrive\\Desktop\\GameOff2023\\bluemoon.png")
+splash_image = pygame.image.load("cityskyline.png")
+second_screen_image = pygame.image.load("bluemoon.png")
 
 text_color = (255, 255, 255)
 text_surface = font.render('', True, text_color)
@@ -102,7 +102,7 @@ def run():
         global y_change
 
         # Load the player image
-        player_image = pygame.image.load("C:\\Users\\Vinutha TJ\\OneDrive\\Desktop\\GameOff2023\\honeybee.png").convert_alpha()
+        player_image = pygame.image.load("honeybee.png").convert_alpha()
         
         # Resize the image if needed
         player_image = pygame.transform.scale(player_image, (90, 110))
