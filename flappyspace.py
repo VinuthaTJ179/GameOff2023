@@ -100,16 +100,18 @@ def run():
 
     def draw_player(x_pos, y_pos):
         global y_change
-        mouth = pygame.draw.circle(screen, grey, (x_pos + 25, y_pos + 15), 12)
-        play = pygame.draw.rect(screen, white, [x_pos, y_pos, 30, 30], 0, 12)
-        eye = pygame.draw.circle(screen, black, (x_pos + 24, y_pos + 12), 5)
-        jetpack = pygame.draw.rect(screen, white, [x_pos - 20, y_pos, 18, 28], 3, 2)
-        if y_change < 0:
-            flame1 = pygame.draw.rect(screen, red, [x_pos - 20, y_pos + 29, 7, 20], 0, 2)
-            flame1_yellow = pygame.draw.rect(screen, yellow, [x_pos - 18, y_pos + 30, 3, 18], 0, 2)
-            flame2 = pygame.draw.rect(screen, red, [x_pos - 10, y_pos + 29, 7, 20], 0, 2)
-            flame2_yellow = pygame.draw.rect(screen, yellow, [x_pos - 8, y_pos + 30, 3, 18], 0, 2)
-        return play
+
+        # Load the player image
+        player_image = pygame.image.load("C:\\Users\\Vinutha TJ\\OneDrive\\Desktop\\GameOff2023\\honeybee.png").convert_alpha()
+        
+        # Resize the image if needed
+        player_image = pygame.transform.scale(player_image, (90, 110))
+
+        # Draw the player image
+        screen.blit(player_image, (x_pos, y_pos))
+
+        return pygame.Rect(x_pos, y_pos, 30, 50)
+
 
 
     def draw_obstacles(obst, y_pos, play):
@@ -173,7 +175,7 @@ def run():
             high_score = score
         if game_over:
             game_over_text = font.render('Game Over! Press Space Bar to restart',True,white)
-            screen.blit(game_over_text,(200,200))
+            screen.blit(game_over_text,(250,250))
 
 
 
